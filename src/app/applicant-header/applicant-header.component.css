@@ -1,0 +1,8 @@
+.applicantHeader {
+
+    border: 3px solid white;
+
+    background-color: rgb(250, 210, 108);
+
+    border-bottom-right-radius: 20px;
+}

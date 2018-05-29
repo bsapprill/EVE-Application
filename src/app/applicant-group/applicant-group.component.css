@@ -1,0 +1,36 @@
+.applicantGroup {
+    background-color: white;
+
+    padding: 0;
+
+    border: 3px solid black;
+}
+
+.header {
+
+    background-color: #062345;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.title {
+    color: #FFFBF4;
+    
+    font-family: "Impact", Times, serif;
+    font-size: 55px;
+    
+}
+
+.applicantHeaders {
+    width: 100%;
+    
+    color: black;
+
+    box-sizing: border-box;
+
+    font-size: 20px;
+    font-weight: 600;
+    
+}

@@ -1,0 +1,11 @@
+.footerContainer {
+    background-color: #062345;
+    width: 100%;
+    min-height: 5vh;
+}
+
+.wrapperForCentering{
+    height: 100vh;
+    width: 100vw;
+    background-color: #F2F2F2;    
+}

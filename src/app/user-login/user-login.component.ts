@@ -15,9 +15,7 @@ export class UserLoginComponent implements OnInit {
   ngOnInit() {}
 
   onClick(){
-    console.log('clicked login');
+    
     window.location.href = this.authService.SSOUrl();
-
   }
-
 }

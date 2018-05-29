@@ -1,0 +1,24 @@
+<div class="applicantGroup"
+  fxLayout='column'
+  fxLayoutAlign='start start'
+  fxLayoutGap='0px'
+>
+  <div class="header">
+    <div class="title">
+      NEW APPLICANTS
+    </div>
+  </div>
+  
+  <div class="applicantHeaders"
+      fxLayout='column'
+      fxLayoutGap='0px'
+  >
+
+    <div *ngFor='let applicant of newApplicants'>
+    
+      <app-applicant-header [applicant]='applicant'></app-applicant-header>
+    
+    </div>
+  </div>
+  
+</div>

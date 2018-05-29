@@ -1,0 +1,24 @@
+.footerGroup {
+    background-color: #D2A364;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.groupHeader {    
+    
+    color: #FFFFFF;
+    
+    
+    padding: 5px;
+
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.groupContent {
+    
+    color: #FFFFFF;
+    
+    
+    padding: 5px;
+}
