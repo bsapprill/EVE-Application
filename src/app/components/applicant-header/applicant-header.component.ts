@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 
-import { APIAccessService } from '../services/api-access.service';
-import { APIAccessParameters } from '../models/api-access-parameters';
-import { CharacterData } from '../models/character-data';
-import { FirebaseDataService } from '../services/firebase-data.service';
+import { APIAccessService } from '../../services/api-access.service';
+import { APIAccessParameters } from '../../models/api-access-parameters';
+import { CharacterData } from '../../models/character-data';
+import { FirebaseDataService } from '../../services/firebase-data.service';
 
 @Component({
   selector: 'app-applicant-header',

@@ -6,25 +6,26 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './modules/app-routing.module';
 
-import { UserHasAuthenticatedComponent } from './user-has-authenticated/user-has-authenticated.component';
-import { UserLoginComponent } from './user-login/user-login.component';
+import { UserHasAuthenticatedComponent } from './components/user-has-authenticated/user-has-authenticated.component';
+import { UserLoginComponent } from './components/user-login/user-login.component';
 
 import { AuthWithEveService } from './services/auth-with-eve.service';
 import { APIAccessService } from './services/api-access.service';
-import { FooterGroupComponent } from './footer-group/footer-group.component';
-import { MaterialModule } from './material.module';
-import { AdminViewComponent } from './admin-view/admin-view.component';
+import { FooterGroupComponent } from './components/footer-group/footer-group.component';
+import { MaterialModule } from './modules/material.module';
+import { AdminViewComponent } from './components/admin-view/admin-view.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 import { FirebaseDataService } from './services/firebase-data.service';
-import { AuthSuccessComponent } from './auth-success/auth-success.component';
-import { ApplicantHeaderComponent } from './applicant-header/applicant-header.component';
+import { AuthSuccessComponent } from './components/auth-success/auth-success.component';
+import { ApplicantHeaderComponent } from './components/applicant-header/applicant-header.component';
 import { RetrievePortraitService } from './services/retrieve-portrait.service';
-import { ApplicantGroupComponent } from './applicant-group/applicant-group.component';
+import { ApplicantGroupComponent } from './components/applicant-group/applicant-group.component';
+import { AuthService } from './services/auth.service';
 
 //import { HttpRequestInteceptor, InterceptorModule } from './intercept.module';
 
@@ -53,7 +54,8 @@ import { ApplicantGroupComponent } from './applicant-group/applicant-group.compo
     AuthWithEveService,
     APIAccessService,
     FirebaseDataService,
-    RetrievePortraitService
+    RetrievePortraitService,
+    AuthService
     
   ],
   bootstrap: [AppComponent]

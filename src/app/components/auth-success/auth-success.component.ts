@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseDataService } from '../services/firebase-data.service';
+import { FirebaseDataService } from '../../services/firebase-data.service';
 
 @Component({
   selector: 'app-auth-success',

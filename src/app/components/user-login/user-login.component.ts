@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthWithEveService } from '../services/auth-with-eve.service';
-import { APIAccessService } from '../services/api-access.service';
-import { FirebaseDataService } from '../services/firebase-data.service';
+import { AuthWithEveService } from '../../services/auth-with-eve.service';
+import { APIAccessService } from '../../services/api-access.service';
+import { FirebaseDataService } from '../../services/firebase-data.service';
 
 @Component({
   selector: 'app-user-login',

@@ -4,13 +4,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs/internal/Observable';
 
-import { AuthWithEveService } from '../services/auth-with-eve.service';
-import { APIAccessService } from '../services/api-access.service';
+import { AuthWithEveService } from '../../services/auth-with-eve.service';
+import { APIAccessService } from '../../services/api-access.service';
 
-import { CharacterData } from '../models/character-data';
-import { APIAccessParameters } from '../models/api-access-parameters';
+import { CharacterData } from '../../models/character-data';
+import { APIAccessParameters } from '../../models/api-access-parameters';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
-import { FirebaseDataService } from '../services/firebase-data.service';
+import { FirebaseDataService } from '../../services/firebase-data.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-user-has-authenticated',
@@ -25,7 +26,8 @@ export class UserHasAuthenticatedComponent implements OnInit {
     private authService: AuthWithEveService,
     private apiService: APIAccessService,
     private data: FirebaseDataService,
-    private http: HttpClient
+    private http: HttpClient,
+    private userAuth: AuthService
   ) { }
   
   ngOnInit() {
@@ -46,7 +48,11 @@ export class UserHasAuthenticatedComponent implements OnInit {
 
             if(doc.exists){
             
+              this.userAuth.InstanceUser = doc.data().CharacterName;
+              this.userAuth.InstanceUserHasAuthed = true;
+
               if(doc.data().CharacterIsAdmin){
+                this.userAuth.InstanceUserIsAdmin = true;
                 this.router.navigate(['/admin']);
               } else {
                 this.router.navigate(['/auth/success']);

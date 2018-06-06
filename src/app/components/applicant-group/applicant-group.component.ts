@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { APIAccessService } from '../services/api-access.service';
-import { FirebaseDataService } from '../services/firebase-data.service';
-import { CharacterData } from '../models/character-data';
+import { APIAccessService } from '../../services/api-access.service';
+import { FirebaseDataService } from '../../services/firebase-data.service';
+import { CharacterData } from '../../models/character-data';
 
 @Component({
   selector: 'app-applicant-group',
