@@ -9,7 +9,7 @@ import { APIAccessService } from '../services/api-access.service';
 
 import { CharacterData } from '../models/character-data';
 import { APIAccessParameters } from '../models/api-access-parameters';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { FirebaseDataService } from '../services/firebase-data.service';
 
 @Component({
@@ -58,6 +58,21 @@ export class UserHasAuthenticatedComponent implements OnInit {
                 CharacterName: obj.CharacterName          
               });
               
+              this.apiService.userRequests(dataObj => {
+                
+                let skillIds: number[] = [];
+
+                dataObj.skills.forEach(skill => {
+                  skillIds.push(skill.skill_id);
+                });
+
+                this.data.activeCharacterDoc.set({
+                  CharacterSP: dataObj.total_sp,
+                  CharacterSkillIDs: skillIds
+                }, {merge: true});
+
+              }, 'characters', obj.CharacterID, 'skills')
+
               this.data.newCharactersDoc.ref.get().then(
                 doc => {
 
@@ -98,26 +113,4 @@ export class UserHasAuthenticatedComponent implements OnInit {
       }
     );
   }
-
-  // userRequests(functionToApply: {()}, refName: string, refFocus: string) {
-  //   let accessParameters: APIAccessParameters = {
-  //     actionToApply: functionToApply,
-  //     referenceName: refName,
-  //     referenceFocus: refFocus
-  //   }
-  //
-  //   this.apiService.requestAPIUsingParameters(walletAccessParameters);
-  // }
-
-  // userRequestsWalletISK() {
-    
-  //   let walletAccessParameters: APIAccessParameters = {
-  //     actionToApply: this.assignWalletISK,
-  //     referenceName: 'characters/',
-  //     referenceFocus: '/wallet/'
-  //   }
-
-  //   this.apiService.requestAPIUsingParameters(walletAccessParameters);
-  // }
-
 }

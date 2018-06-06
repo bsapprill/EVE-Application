@@ -1,13 +1,21 @@
-<div class="applicantHeader"
+<mat-card class="applicantHeader"
   fxLayout='row'
   fxLayoutAlign='start center'
   fxLayoutGap='5px'
+  
   >
 
     <img [src]='portraitURL'/>
 
-    <div class="characterName">
-      {{applicant.CharacterName | uppercase}}
+    <div class="characterData"        
+    >
+
+      <div class="characterName">
+        {{applicant.CharacterName | uppercase}}
+      </div>
+      <div class="characterSP">
+        SP: {{applicant.CharacterSP | number}}
+      </div>
     </div>
 
-</div>
+</mat-card>

@@ -1,7 +1,7 @@
 .applicantGroup {
     background-color: white;
 
-    padding: 0;
+    padding: 0px;
 
     border: 3px solid black;
 }
@@ -32,5 +32,24 @@
 
     font-size: 20px;
     font-weight: 600;
+
+    padding: 6px;
     
+}
+
+.clearButton {
+    
+    color: white;
+    background-color:#062345;
+
+    font-size: 15px;
+    font-weight: bold;
+    margin: 8px;
+}
+
+.buttonSeparator {
+    
+    width: 100%;
+
+    border: 1px solid #E4CF00;
 }

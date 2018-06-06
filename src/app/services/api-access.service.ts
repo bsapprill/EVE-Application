@@ -52,6 +52,26 @@ export class APIAccessService {
     return this.httpGetAtUrl(referenceUrl);
   }
 
+  returnMarketsGroupsAPIRequest(id: number) {
+
+    let referenceUrl: string
+      = ESIRoot
+      + 'markets/groups/'+id.toString() +'/';
+
+    return this.httpGetAtUrl(referenceUrl);
+  }
+
+  returnUniverseNameAPIRequest(ids: number[]): Observable<any> {
+    
+    let referenceUrl: string
+      = ESIRoot
+      + 'universe/names/';
+
+    return this.http.post(
+      referenceUrl, ids //, { headers: this.authService.activeAuthHeader }
+    );
+  }
+
   httpGetAtUrl(url: string) {
 
     return this.http.get(

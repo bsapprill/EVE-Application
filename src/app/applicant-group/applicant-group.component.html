@@ -1,6 +1,6 @@
 <div class="applicantGroup"
   fxLayout='column'
-  fxLayoutAlign='start start'
+  fxLayoutAlign='center center'
   fxLayoutGap='0px'
 >
   <div class="header">
@@ -9,16 +9,26 @@
     </div>
   </div>
   
-  <div class="applicantHeaders"
-      fxLayout='column'
-      fxLayoutGap='0px'
+  <div class='haveNewApplicants' *ngIf='newApplicants.length !== 0'
   >
 
-    <div *ngFor='let applicant of newApplicants'>
-    
-      <app-applicant-header [applicant]='applicant'></app-applicant-header>
-    
+    <div class="applicantHeaders"
+    fxLayout='column'
+        fxLayoutGap='8px'      
+    >
+  
+      <div *ngFor='let applicant of newApplicants'>
+      
+        <app-applicant-header [applicant]='applicant'></app-applicant-header>
+      
+      </div>
     </div>
+    
+    <hr class="buttonSeparator">
+  
+    <button mat-raised-button class="clearButton" (click)='adminClearsList()'>CLEAR LIST</button>
   </div>
+
+  <div class='noApplicants' *ngIf='newApplicants.length === 0'>NO NEW APPLICANTS</div>
   
 </div>

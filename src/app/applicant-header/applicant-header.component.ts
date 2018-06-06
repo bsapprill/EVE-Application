@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 
 import { APIAccessService } from '../services/api-access.service';
 import { APIAccessParameters } from '../models/api-access-parameters';
 import { CharacterData } from '../models/character-data';
+import { FirebaseDataService } from '../services/firebase-data.service';
 
 @Component({
   selector: 'app-applicant-header',
@@ -15,8 +16,27 @@ export class ApplicantHeaderComponent implements OnInit {
 
   portraitURL: string;
 
+  // @HostListener('click') adminClearsNewApplicant() {
+  //   this.firebase.newCharactersDoc.ref.get().then(
+  //     doc => {
+  //       let newCharacters: string[] = [];
+        
+  //       doc.data().characterNames.forEach(name => {
+  //         if(this.applicant.CharacterName != name){
+  //           newCharacters.push(name);
+  //         }
+  //       });
+        
+  //       this.firebase.newCharactersDoc.update({
+  //         characterNames: newCharacters
+  //       });
+  //     }
+  //   );
+  // }
+
   constructor(
-    private api: APIAccessService
+    private api: APIAccessService,
+    private firebase: FirebaseDataService
   ) { }
 
   ngOnInit() {
@@ -30,6 +50,10 @@ export class ApplicantHeaderComponent implements OnInit {
   retrieveApplicantPortrait() {
   
     this.api.userRequests(this.assignApplicantPortraitURL.bind(this), 'characters', this.applicant.CharacterID, 'portrait');
+  }
+
+  retrieveApplicantSP() {
+    
   }
 
 }

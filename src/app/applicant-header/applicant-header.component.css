@@ -1,8 +1,23 @@
 .applicantHeader {
 
-    border: 3px solid white;
-
-    background-color: rgb(250, 210, 108);
+    background-color: rgb(230, 230, 230);
 
     border-bottom-right-radius: 20px;
+
+    color: rgb(0, 0, 0);
+
+    padding: 5px;
+}
+
+.characterName {
+    font-family: 'Barlow';
+    font-size: 30px;
+    font-weight: 600;
+    
+}
+
+.characterSP {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 100;
 }

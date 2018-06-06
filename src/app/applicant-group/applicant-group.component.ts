@@ -12,6 +12,8 @@ export class ApplicantGroupComponent implements OnInit {
 
   newApplicants: CharacterData[] = [];
 
+  haveNewApplicants: boolean;
+
   constructor(
     private apiService: APIAccessService,
     private data: FirebaseDataService
@@ -21,7 +23,9 @@ export class ApplicantGroupComponent implements OnInit {
     this.data.newCharactersDoc.valueChanges().subscribe(
       docUpdate => {
         
-        this.assignNewApplicants(docUpdate.characterNames);
+
+          this.assignNewApplicants(docUpdate.characterNames);
+        
       }
     );
   }
@@ -49,14 +53,25 @@ export class ApplicantGroupComponent implements OnInit {
 
   assignNewApplicants(characterNames: string[]) {
     
+    let newApplicantList: CharacterData[] = [];
+
     characterNames.forEach(
       name => this.data.charactersCollection.doc(name).ref.get().then(
         doc => {
     
-          this.newApplicants.push(doc.data() as CharacterData);
+          newApplicantList.push(doc.data() as CharacterData);
           
         }
       )
     )
+
+    this.newApplicants = newApplicantList;
+  }
+
+  adminClearsList() {    
+    this.newApplicants = [];
+    this.data.newCharactersDoc.update({
+      characterNames: this.newApplicants
+    })
   }
 }
