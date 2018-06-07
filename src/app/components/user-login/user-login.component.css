@@ -1,9 +1,18 @@
-.routerContainer {
+mat-card {
+    display: flex;
+
+    padding: 0px;
+    margin: 0px;
+
+    align-self: center;
+    justify-content: center;
+}
+
+/* .routerContainer {
 
     padding: 0;
 
     background-color: #062345;
-    /* F3F8FD */
 }
 
 .routerContainerHeader {
@@ -24,8 +33,6 @@
     padding: 10px;
 
     border: 0px solid #000000;
-    /* border-top-left-radius: 35px;
-    border-bottom-right-radius: 17px; */
 }
 
 .loginButton {
@@ -75,6 +82,4 @@
     
     height: 0px;
     border: 1px solid #E4CF00;
-    
-    /* box-shadow: -15px 15px 1px 1px #FFFFFF inset; */
-}
+} */

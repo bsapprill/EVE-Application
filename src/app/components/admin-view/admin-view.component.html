@@ -1,1 +1,24 @@
-<app-applicant-group></app-applicant-group>
+<mat-toolbar>
+    <mat-toolbar-row>
+        KIITH NABAL
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+        
+        <nav mat-tab-nav-bar>
+            <a mat-tab-link
+                *ngFor='let route of routeList'
+                [routerLink]='route'
+                routerLinkActive #rla='routerLinkActive'
+                [active]='rla.isActive'
+                class='navLink'
+            >
+                {{route | uppercase}}
+            </a>
+        </nav>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+
+<router-outlet></router-outlet>

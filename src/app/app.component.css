@@ -1,4 +1,4 @@
-.footerContainer {
+/* .footerContainer {
     background-color: #062345;
     width: 100%;
     min-height: 5vh;
@@ -8,4 +8,42 @@
     height: 100vh;
     width: 100vw;
     background-color: #F2F2F2;    
+}
+
+.navTabGroup {
+    border: 2px solid black;
+}
+
+.mainNavbar {
+    padding: 0px;
+    margin: 0px;
+}
+
+.navLink {
+    background-color: black;
+    color: white;
+} */
+
+.siteTitle {
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.loginButton {
+    
+    height: 35px;
+    width: 225px;
+
+    margin: 0px;
+
+    background-image: url(/assets/eve-sso-login-white-large.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }

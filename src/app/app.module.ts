@@ -26,6 +26,10 @@ import { ApplicantHeaderComponent } from './components/applicant-header/applican
 import { RetrievePortraitService } from './services/retrieve-portrait.service';
 import { ApplicantGroupComponent } from './components/applicant-group/applicant-group.component';
 import { AuthService } from './services/auth.service';
+import { MembersGroupComponent } from './components/members-group/members-group.component';
+import { RequisitionsGroupComponent } from './components/requisitions-group/requisitions-group.component';
+import { FleetGroupComponent } from './components/fleet-group/fleet-group.component';
+import { TradeGroupComponent } from './components/trade-group/trade-group.component';
 
 //import { HttpRequestInteceptor, InterceptorModule } from './intercept.module';
 
@@ -38,7 +42,11 @@ import { AuthService } from './services/auth.service';
     AdminViewComponent,
     AuthSuccessComponent,
     ApplicantHeaderComponent,
-    ApplicantGroupComponent
+    ApplicantGroupComponent,
+    MembersGroupComponent,
+    RequisitionsGroupComponent,
+    FleetGroupComponent,
+    TradeGroupComponent
   ],
   imports: [
     BrowserModule,

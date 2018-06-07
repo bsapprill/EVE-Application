@@ -14,6 +14,14 @@ import { Router } from '@angular/router';
 })
 export class AdminViewComponent implements OnInit {
 
+  routeList: string[] = [
+    'applicants',
+    'members',
+    'requisitions',
+    'fleet',
+    'trade'
+  ]
+
   constructor(private auth: AuthService,
     private router: Router) {}
 

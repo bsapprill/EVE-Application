@@ -1,6 +1,44 @@
-<div class="wrapperForCentering"
-    fxLayout='row'
-    fxLayoutAlign='center start'>
+<!-- <mat-card class="mainNavbar">
+
+    <button mat-raised-button class="navButton"
+    >NEW APPLICANTS</button>
+    <button mat-raised-button class="navButton"
+    >MEMBERS</button>
+    <button mat-raised-button class="navButton"
+    >REQ.</button>
+    <button mat-raised-button class="navButton"
+    >FLEET</button>
+    <button mat-raised-button class="navButton"
+    >TRADE</button>
+</mat-card> -->
+
+<!-- <mat-card>
+    <mat-card-content>
+        <h2 class='orgTitle'>KIITH NABAAL</h2>
+        <mat-tab-group>
+            <mat-tab *ngFor='let route of routeList'                
+            >
+                <ng-template mat-tab-label>
+                    {{route | uppercase}}
+                </ng-template>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card-content>
+</mat-card> -->
+
+
+
+<!-- <div class="wrapperForCentering"
+    fxLayout='column'
+    fxLayoutAlign='start center'
+>
     
-    <router-outlet></router-outlet>
-</div>
+</div> -->
+
+<mat-toolbar color='primary' >
+    <span class='siteTitle'>.CAVALIER</span>
+    <span class="spacer"></span>
+    <button mat-button class='loginButton'></button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
