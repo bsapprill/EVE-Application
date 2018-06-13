@@ -1,0 +1,21 @@
+.wrapper {
+    background-color: black;
+    width: 50vw;
+}
+
+.navButtons {
+    min-width: 50px;
+    background-color: black;
+}
+
+.memberSelector {
+    background-color: lightgray;
+    font-size: 20px;
+    margin: 1px;
+
+    width: 15vw;
+}
+
+.memberOutput {
+    background-color: lightblue;
+}

@@ -31,6 +31,9 @@ import { RequisitionsGroupComponent } from './components/requisitions-group/requ
 import { FleetGroupComponent } from './components/fleet-group/fleet-group.component';
 import { TradeGroupComponent } from './components/trade-group/trade-group.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DevViewComponent } from './components/dev-view/dev-view.component';
+
 //import { HttpRequestInteceptor, InterceptorModule } from './intercept.module';
 
 @NgModule({
@@ -46,10 +49,12 @@ import { TradeGroupComponent } from './components/trade-group/trade-group.compon
     MembersGroupComponent,
     RequisitionsGroupComponent,
     FleetGroupComponent,
-    TradeGroupComponent
+    TradeGroupComponent,
+    DevViewComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     FlexLayoutModule,

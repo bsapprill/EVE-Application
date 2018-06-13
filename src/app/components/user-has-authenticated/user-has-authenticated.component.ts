@@ -61,7 +61,8 @@ export class UserHasAuthenticatedComponent implements OnInit {
               
               this.data.activeCharacterDoc.set({
                 CharacterID: obj.CharacterID,
-                CharacterName: obj.CharacterName          
+                CharacterName: obj.CharacterName,
+                CharacterIsAdmin: false          
               });
               
               this.apiService.userRequests(dataObj => {
@@ -79,39 +80,39 @@ export class UserHasAuthenticatedComponent implements OnInit {
 
               }, 'characters', obj.CharacterID, 'skills')
 
-              this.data.newCharactersDoc.ref.get().then(
-                doc => {
+              // this.data.newCharactersDoc.ref.get().then(
+              //   doc => {
 
-                  let newApplicants = doc.data().characterNames;
+              //     let newApplicants = doc.data().characterNames;
 
-                  newApplicants.push(obj.CharacterName);
+              //     newApplicants.push(obj.CharacterName);
                   
-                  this.data.newCharactersDoc.update(
-                    {
-                      characterNames: newApplicants
-                    }
-                  );
-                }
-              )
+              //     this.data.newCharactersDoc.update(
+              //       {
+              //         characterNames: newApplicants
+              //       }
+              //     );
+              //   }
+              // )
 
-              this.data.charactersCollection.doc('admins').ref.get().then(
-                docRef => {
+              // this.data.charactersCollection.doc('admins').ref.get().then(
+              //   docRef => {
       
-                  let adminNames = docRef.data().adminCharacters;
+              //     let adminNames = docRef.data().adminCharacters;
       
-                  if(adminNames.includes(obj.CharacterName)){
+              //     if(adminNames.includes(obj.CharacterName)){
                     
-                    this.data.activeCharacterDoc.set({
-                      CharacterIsAdmin: true
-                    }, {merge: true});
+              //       this.data.activeCharacterDoc.set({
+              //         CharacterIsAdmin: true
+              //       }, {merge: true});
       
-                    this.router.navigate(['/admin']);
+              //       this.router.navigate(['/admin']);
       
-                  } else {
-                    this.router.navigate(['/auth/success']);
-                  }
-                }
-              );
+              //     } else {
+              //       this.router.navigate(['/auth/success']);
+              //     }
+              //   }
+              // );
             }
           }
         )

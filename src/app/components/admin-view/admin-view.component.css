@@ -1,0 +1,23 @@
+.wrapper {
+    
+    background-color: rgb(241, 241, 241);
+
+    position: fixed;
+
+    left: 50%;
+
+    transform: translate(-50%, 0%);
+}
+
+.outletWrapper {
+
+    display: inline-block;
+
+    position: fixed;
+
+    left: 50%;
+    top: 10%;
+
+    transform: translate(-50%, 0%);
+    
+}

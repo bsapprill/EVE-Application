@@ -1,3 +1,37 @@
-<p>
-  members-group works!
-</p>
+<div class="wrapper"
+  fxLayout='row'
+  fxLayoutGap='10px'
+>
+  <div class="navButtons"        
+  >
+    <button mat-button class='memberSelector'
+      fxLayout='column'
+      (click)='selectMember(i)'
+      *ngFor='let applicant of applicants; let i = index'
+    >          
+      {{applicant.CharacterName}}
+    </button>
+  </div>
+
+  <div *ngIf='selectedMember' class="memberOutput">
+    <div class="memberPortrait">
+      
+    </div>
+    <div class="memberName">
+
+      {{selectedMember.CharacterName}}
+    </div>
+    <div class="memberSP">
+
+      SP: {{selectedMember.CharacterSP | number}}
+    </div>
+  </div>
+
+</div>
+
+<!-- <mat-card>
+    <div *ngFor='let applicant of applicants'
+    >
+      <app-applicant-header [applicant]='applicant'></app-applicant-header>
+    </div>
+</mat-card> -->

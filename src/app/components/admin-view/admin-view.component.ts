@@ -15,7 +15,6 @@ import { Router } from '@angular/router';
 export class AdminViewComponent implements OnInit {
 
   routeList: string[] = [
-    'applicants',
     'members',
     'requisitions',
     'fleet',
@@ -26,8 +25,8 @@ export class AdminViewComponent implements OnInit {
     private router: Router) {}
 
   ngOnInit() {
-    if(!this.auth.InstanceUserIsAdmin || !this.auth.InstanceUserHasAuthed){
-      this.router.navigate(['/auth/login']);
-    }
+    // if(!this.auth.InstanceUserIsAdmin || !this.auth.InstanceUserHasAuthed){
+    //   this.router.navigate(['/auth/login']);
+    // }
   }
 }

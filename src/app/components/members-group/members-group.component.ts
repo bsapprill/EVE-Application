@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseDataService } from '../../services/firebase-data.service';
 
 @Component({
   selector: 'app-members-group',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MembersGroupComponent implements OnInit {
 
-  constructor() { }
+  applicants: CharacterData[] = [];
+
+  selectedMember: CharacterData;
+
+  constructor(private data: FirebaseDataService) { }
 
   ngOnInit() {
+
+    this.data.charactersCollection.ref.get().then(
+      querySnapshot => {
+        querySnapshot.docs.forEach(
+          doc => {
+            this.applicants.push(doc.data() as CharacterData)
+          }
+        )
+      }
+    )
+  }
+
+  selectMember(index: number) {
+    this.selectedMember = this.applicants[index];
   }
 
 }

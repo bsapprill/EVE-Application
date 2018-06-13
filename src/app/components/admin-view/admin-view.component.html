@@ -1,24 +1,22 @@
-<mat-toolbar>
-    <mat-toolbar-row>
-        KIITH NABAL
-    </mat-toolbar-row>
-    <mat-toolbar-row>
-        
-        <nav mat-tab-nav-bar>
-            <a mat-tab-link
-                *ngFor='let route of routeList'
-                [routerLink]='route'
-                routerLinkActive #rla='routerLinkActive'
-                [active]='rla.isActive'
-                class='navLink'
-            >
-                {{route | uppercase}}
-            </a>
-        </nav>
-    </mat-toolbar-row>
-</mat-toolbar>
+<div class='wrapper'>
+    
+    <nav mat-tab-nav-bar>
+        <a mat-tab-link
+            *ngFor='let route of routeList'
+            [routerLink]='route'
+            routerLinkActive #rla='routerLinkActive'
+            [active]='rla.isActive'
+            class='navLink'
+        >
+            {{route | uppercase}}
+        </a>
+    </nav>
+    
+</div>
+
+<div class="outletWrapper">        
+
+    <router-outlet></router-outlet>
+</div>
 
 
-
-
-<router-outlet></router-outlet>

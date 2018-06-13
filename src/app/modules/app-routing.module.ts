@@ -37,12 +37,8 @@ const appRoutes: Routes = [
       children: [
             {
                 path: '',
-                redirectTo: 'applicants',
+                redirectTo: 'members',
                 pathMatch: 'full'
-            },
-            {
-                path: 'applicants',
-                component: ApplicantGroupComponent
             },
             {
                 path: 'members',
@@ -61,6 +57,9 @@ const appRoutes: Routes = [
                 component: TradeGroupComponent
             }
       ]
+    },
+    { path: 'dev',
+      
     },
     { path: '', redirectTo: '/auth/login', pathMatch: 'full' }
 ];
