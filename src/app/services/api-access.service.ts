@@ -20,6 +20,12 @@ export class APIAccessService {
       private authService: AuthWithEveService
   ){}
 
+  verifyCharacter() {
+    console.log('verifying character');
+    
+    
+  }
+
   userRequests(functionToApply: (data) => void, refName: string, characterID: number, refFocus: string) {
     let accessParameters: APIAccessParameters = {
       actionToApply: functionToApply,
@@ -57,6 +63,14 @@ export class APIAccessService {
     let referenceUrl: string
       = ESIRoot
       + 'markets/groups/'+id.toString() +'/';
+
+    return this.httpGetAtUrl(referenceUrl);
+  }
+
+  returnMarketsGroups() {
+    let referenceUrl: string =
+    ESIRoot
+    + 'markets/groups/';
 
     return this.httpGetAtUrl(referenceUrl);
   }

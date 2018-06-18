@@ -5,6 +5,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatTabsModule,
     MatToolbarModule,
     MatExpansionModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatInputModule
   ],
   exports: [
     MatButtonModule,
@@ -21,7 +23,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatTabsModule,
     MatToolbarModule,
     MatExpansionModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatInputModule
   ],
   declarations: []
 })

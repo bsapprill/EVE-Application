@@ -1,0 +1,23 @@
+<mat-card class='card'>
+  <button mat-raised-button
+    (click)='testCall(start.value)'
+  >TEST</button>
+  <button mat-raised-button
+    (click)='readData(start.value, range.value)'
+  >READ</button> <br>
+  <br>
+  Start:
+  <mat-form-field>
+
+    <input matInput #start>  
+  </mat-form-field>
+  <br><br>
+  Range:
+  <mat-form-field>
+
+    <input matInput #range>  
+  </mat-form-field>
+  <br><br>
+  CHARACTER NAME <br>
+  CHARACTER SP
+</mat-card>

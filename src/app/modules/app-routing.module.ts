@@ -10,6 +10,9 @@ import { MembersGroupComponent } from "../components/members-group/members-group
 import { RequisitionsGroupComponent } from "../components/requisitions-group/requisitions-group.component";
 import { FleetGroupComponent } from "../components/fleet-group/fleet-group.component";
 import { TradeGroupComponent } from "../components/trade-group/trade-group.component";
+import { DevViewComponent } from "../components/dev-view/dev-view.component";
+import { FirebaseManagementComponent } from "../components/dev-view/firebase-management/firebase-management.component";
+import { ESIAccessComponentComponent } from "../components/dev-view/esiaccess-component/esiaccess-component.component";
 
 const appRoutes: Routes = [
     { path: 'auth',
@@ -59,7 +62,17 @@ const appRoutes: Routes = [
       ]
     },
     { path: 'dev',
-      
+      component: DevViewComponent,
+      children: [          
+          {
+              path: 'firebase',
+              component: FirebaseManagementComponent
+          },
+          {
+              path: 'esi',
+              component: ESIAccessComponentComponent              
+          }
+      ]
     },
     { path: '', redirectTo: '/auth/login', pathMatch: 'full' }
 ];

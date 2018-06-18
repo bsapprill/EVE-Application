@@ -33,6 +33,8 @@ import { TradeGroupComponent } from './components/trade-group/trade-group.compon
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DevViewComponent } from './components/dev-view/dev-view.component';
+import { FirebaseManagementComponent } from './components/dev-view/firebase-management/firebase-management.component';
+import { ESIAccessComponentComponent } from './components/dev-view/esiaccess-component/esiaccess-component.component';
 
 //import { HttpRequestInteceptor, InterceptorModule } from './intercept.module';
 
@@ -50,7 +52,9 @@ import { DevViewComponent } from './components/dev-view/dev-view.component';
     RequisitionsGroupComponent,
     FleetGroupComponent,
     TradeGroupComponent,
-    DevViewComponent
+    DevViewComponent,
+    FirebaseManagementComponent,
+    ESIAccessComponentComponent
   ],
   imports: [
     BrowserModule,
