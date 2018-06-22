@@ -1,10 +1,17 @@
 <mat-card class='card'>
+  
   <button mat-raised-button
     (click)='testCall(start.value)'
   >TEST</button>
+  
   <button mat-raised-button
     (click)='readData(start.value, range.value)'
-  >READ</button> <br>
+  >READ</button>
+  
+  <button mat-raised-button
+    (click)='writeToFirebase()'
+  >WRITE</button> <br>
+  
   <br>
   Start:
   <mat-form-field>

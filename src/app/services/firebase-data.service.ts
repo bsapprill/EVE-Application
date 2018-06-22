@@ -29,15 +29,24 @@ export class FirebaseDataService {
       this.SkillsDocument = this.DataCollection.doc('Skills');
   }
 
-  testCall() {
-     
+  addUniverseCategory(categoryName: string, categoryId: number) {
+    this.db.collection('Categories').doc(categoryName).set({id: categoryId});
   }
 
-  keyCheckForSkillGroup() {
-    
+  addCategoryGroup(categoryName: string, groupName: string, groupId: number) {
+    this.db.collection('Categories').doc(categoryName).collection(groupName).add({id: groupId});
+  }
 
-    
-    
+  accessCategory(categoryName: string, callback) {
+    return this.db.collection('Categories').doc(categoryName).ref.get().then(callback);
+  }
+
+  accessCategoryGroup(groupName: string, categoryName: string, callback) {
+    return this.db.collection('Categories').doc(categoryName).collection(groupName).ref.get().then(callback);
+  }
+
+  testCall() {
+
   }
 
   transposeSkillTemplatesFromCCPDATA() {
@@ -106,7 +115,6 @@ export class FirebaseDataService {
         }
       );
     });
-    
     
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { APIAccessService } from '../../../services/api-access.service';
 import { FirebaseDataService } from '../../../services/firebase-data.service';
 import { CharacterData } from '../../../models/character-data';
+import { access } from 'fs';
 
 @Component({
   selector: 'app-esiaccess-component',
@@ -21,14 +22,15 @@ export class ESIAccessComponentComponent implements OnInit {
     )
   }
 
-  testCall(id: number) {
-    this.api.returnMarketsGroupsAPIRequest(id).subscribe(
-      data => {
-        this.api.returnUniverseNameAPIRequest(data.types).subscribe(
-          data => console.log(data)
-        );
-      }
-    );
+  testCall() {
+    
+    this.data.accessCategory('Ship', ;
+
+  }
+  
+  accessCategoryAPI(CategoryId: number) {
+
+    this.api.buildAPIRequest('universe/', 'categories/', CategoryId.toString() + '/')
   }
 
   readData(rangeStart: number, range: number) {
@@ -40,7 +42,7 @@ export class ESIAccessComponentComponent implements OnInit {
     }
   }
 
-  returnSingleData(id: number) {
+  returnSingleData(id: number): any {
     this.api.returnMarketsGroupsAPIRequest(id).subscribe(
       data => {        
         return data;
@@ -48,13 +50,11 @@ export class ESIAccessComponentComponent implements OnInit {
     );
   }
 
-  // function accessDataAtI(callback: funcCallback): void {
-
-
-  // }
+  writeToFirebase() {
+    
+    
+    
+  }
 
 }
 
-interface funcCallback {
-  (param: any): any;
-}

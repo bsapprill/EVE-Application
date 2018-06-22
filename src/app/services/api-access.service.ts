@@ -26,6 +26,27 @@ export class APIAccessService {
     
   }
 
+  buildAPIRequest(param1: string, param2?: string, param3?: string): Observable<any> {
+    
+    let referenceUrl: string
+      = ESIRoot
+      + param1;
+
+    if(param2 !== undefined){
+      
+      referenceUrl += param2;
+      
+    }
+
+    if(param3 !== undefined){
+      
+      referenceUrl += param3;
+      
+    }
+
+    return this.httpGetAtUrl(referenceUrl);
+  }
+
   userRequests(functionToApply: (data) => void, refName: string, characterID: number, refFocus: string) {
     let accessParameters: APIAccessParameters = {
       actionToApply: functionToApply,
@@ -85,6 +106,16 @@ export class APIAccessService {
       referenceUrl, ids //, { headers: this.authService.activeAuthHeader }
     );
   }
+
+  returnUniverseTypes(): Observable<any> {
+    let referenceUrl: string
+      = ESIRoot
+      + 'universe/types/';
+
+      return this.httpGetAtUrl(referenceUrl);
+  }
+
+
 
   httpGetAtUrl(url: string) {
 
