@@ -1,7 +1,7 @@
 <mat-card class='card'>
   
   <button mat-raised-button
-    (click)='testCall(start.value)'
+    (click)='testCall()'
   >TEST</button>
   
   <button mat-raised-button
@@ -13,18 +13,15 @@
   >WRITE</button> <br>
   
   <br>
-  Start:
+  New Addition:
   <mat-form-field>
 
     <input matInput #start>  
   </mat-form-field>
-  <br><br>
-  Range:
-  <mat-form-field>
-
-    <input matInput #range>  
-  </mat-form-field>
-  <br><br>
-  CHARACTER NAME <br>
-  CHARACTER SP
+  <br>
+  <button mat-raised-button
+    (click)='addData(start.value)'
+  >ADD</button>
+  <br>
+  
 </mat-card>

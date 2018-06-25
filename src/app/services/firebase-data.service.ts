@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection, QuerySnapshot } from 'angularfire2/firestore';
 import { CharacterData } from '../models/character-data';
 import { APIAccessService } from './api-access.service';
 import { SkillGroupData } from '../models/skill-group-data';
@@ -29,20 +29,24 @@ export class FirebaseDataService {
       this.SkillsDocument = this.DataCollection.doc('Skills');
   }
 
-  addUniverseCategory(categoryName: string, categoryId: number) {
-    this.db.collection('Categories').doc(categoryName).set({id: categoryId});
+  AddCategory(categoryData) {
+    this.db.collection('Categories').add( categoryData );
   }
 
-  addCategoryGroup(categoryName: string, groupName: string, groupId: number) {
-    this.db.collection('Categories').doc(categoryName).collection(groupName).add({id: groupId});
+  AddGroup_ToCategory_WithCategoryDocumentId(groupData, categoryDocumentId: string) {
+    this.db.collection('Categories').doc(categoryDocumentId).collection('Groups').add(groupData);
   }
 
-  accessCategory(categoryName: string, callback) {
-    return this.db.collection('Categories').doc(categoryName).ref.get().then(callback);
+  QueryForCategory_ByName(categoryName: string): Promise<any> {
+    return this.db.collection('Categories').ref.where('name', '==', categoryName).get();
   }
 
-  accessCategoryGroup(groupName: string, categoryName: string, callback) {
-    return this.db.collection('Categories').doc(categoryName).collection(groupName).ref.get().then(callback);
+  GetCategory_ById(categoryId: number) {
+    return this.db.collection('Categories').ref.where('id', '==', categoryId).get();
+  }
+
+  GetCategoryDocument_ById(docId: string) {
+    return this.db.collection('Categories').doc(docId).ref.get();
   }
 
   testCall() {
